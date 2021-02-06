@@ -3,8 +3,8 @@ import {Background, Main, Content, FormContainer} from './style';
 import { Link } from 'react-router-dom';
 import logoImg from '../../assets/logo.png';
 
-import Button from '../../componets/buttom/index';
-import Input from '../../componets/input';
+import Button from '../../components/buttom/index';
+import Input from '../../components/input';
 
 
 import { FiArrowDownLeft, FiUser, FiLock, FiArrowLeftCircle } from 'react-icons/fi';

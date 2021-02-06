@@ -1,3 +1,4 @@
+import { shade } from "polished";
 import styled, { css } from "styled-components";
 
 interface ContainerInpurtProps{
@@ -24,6 +25,31 @@ export const Container = styled.div<ContainerInpurtProps>`
     border: none;
     width: 90%;
     height: 100%;
+  }
+  button{
+  font-family: 'Nunito',sans-serif;
+  margin: 0;
+  padding: 0;
+  outline: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  margin-left: auto;
+  width: 120px;
+  height: 30px;
+  display: flex;
+  -webkit-box-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  align-items: center;
+  color: #ffffff;
+  background: #18A558;
+  border-radius: 10px;
+  font-weight: bold;
+  font-size: 16px;
+  border: none;
+  &:hover{
+    background: ${shade(.1,'#18A558')}
+  }
   }
   & + div {
     margin: 20px;

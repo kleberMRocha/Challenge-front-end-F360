@@ -4,9 +4,10 @@ import { Container } from "./style";
 
 interface InputProps extends  InputHTMLAttributes<HTMLInputElement>{
   Icon?: React.ComponentType<IconBaseProps>;
+  handleSubmit: Function;
 }
 
-const SearchInput: React.FC<InputProps> = ({ children,Icon, ...rest }) => {
+const SearchInput: React.FC<InputProps> = ({ children,Icon, handleSubmit, ...rest }) => {
   const [isFocus,setIsFocus] = useState(false);
 
   return (
@@ -18,6 +19,9 @@ const SearchInput: React.FC<InputProps> = ({ children,Icon, ...rest }) => {
         onBlur={() => setIsFocus(!isFocus)}
        {...rest}
        />
+       <button onClick={() => handleSubmit()}>
+         Buscar
+       </button>
     </Container>
   );
 };

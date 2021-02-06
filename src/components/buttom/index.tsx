@@ -1,8 +1,8 @@
 import React from 'react';
 import {Button} from './style';
 
-const HeaderNav:React.FC = ({children}) => {
+const ButtonForm:React.FC = ({children}) => {
   return (<Button>{children}</Button>);
 }
 
-export default HeaderNav;
+export default ButtonForm;
