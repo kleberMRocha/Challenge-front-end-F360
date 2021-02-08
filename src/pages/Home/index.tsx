@@ -1,11 +1,14 @@
 import React, { useCallback, useEffect, useState } from 'react';
+
 import Header from '../../components/header';
 import CardCnpj from '../../components/cnpjCard';
 import SearchInput from '../../components/searchInput';
+import Modal from '../../components/modal';
+
 import { Container, Content } from './style';
 import { FiSearch } from 'react-icons/fi';
-import api from '../../services/apt';
-import * as yup from 'yup';;
+import api from '../../services/api';
+import * as yup from 'yup';
 
 function App() {
   useEffect(() => {
@@ -29,6 +32,8 @@ function App() {
   const [cnpjSearch, setCnpjSearch] = useState('');
   const [message, setMessage] = useState('');
   const [searchResult, setSearchResult] = useState<string[]>([]);
+  const [modalIsOpen, setModalIsOpen] = useState(false);
+  const [selectedCnpj, setSelectedCnpj] = useState('');
 
   const handleSearchCnpjs = useCallback(async () => {
     const localStorageCnpj = localStorage.getItem('@CNPJ:All');
@@ -58,6 +63,14 @@ function App() {
   return (
     <Container>
       <Header />
+    {
+      modalIsOpen && 
+      <Modal
+        handleOpenModal={setModalIsOpen}
+        isOpenModal={modalIsOpen}
+        selectedCnpj={selectedCnpj}
+       />
+    }  
       <Content>
         <h1>Consultar CNPJ's</h1>
         <SearchInput
@@ -68,7 +81,14 @@ function App() {
           value={cnpjSearch}
         />
         {message.length > 0 && <span>{message}</span>}
-        {searchResult && searchResult.map(cnpj => <CardCnpj cnpj={cnpj} key={cnpj}></CardCnpj>)}
+        {searchResult && searchResult.map(cnpj => {
+          return <CardCnpj 
+          cnpj={cnpj} 
+          key={cnpj}
+          handleOpenModal={setModalIsOpen}
+          handleSetSelectedCnpj={setSelectedCnpj}
+          />
+        })}
       </Content>
     </Container>
   );

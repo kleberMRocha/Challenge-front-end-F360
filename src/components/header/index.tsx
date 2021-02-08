@@ -3,8 +3,11 @@ import { Link } from 'react-router-dom';
 import {Header} from './style';
 import {FiPower} from 'react-icons/fi'
 import logoIMG from '../../assets/logo.png';
+import {useAuth} from '../../hooks/authContext';
 
 const HeaderNav:React.FC = ({children}) => {
+    const {user,token, signOut } = useAuth();
+
   return (
     <Header>
         <ul>
@@ -13,16 +16,15 @@ const HeaderNav:React.FC = ({children}) => {
                     <img src={logoIMG} alt="logo CNPJ" />
                 </Link>
             </li>
-            <li>Consultar CNPJ</li>
+            <li>Olá, {user || ' Visitante.'}</li>
         </ul>
-
-        <Link to="/Login">Login</Link>
-        <span>
-            <button>
-             <FiPower />
-             </button>
-        </span>
+        {
+            token 
+            ?( <span><button onClick={() => signOut()}><FiPower /></button></span>)
+            : <Link to="/Login">Login</Link>
+        }
         
+    
     </Header>
   );
 }

@@ -1,8 +1,11 @@
-import React from 'react';
+import React, { ButtonHTMLAttributes } from 'react';
 import {Button} from './style';
 
-const ButtonForm:React.FC = ({children}) => {
-  return (<Button>{children}</Button>);
+interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement>{
+}
+
+const ButtonForm:React.FC<ButtonProps> = ({children, ...res}) => {
+  return (<Button {...res}>{children}</Button>);
 }
 
 export default ButtonForm;

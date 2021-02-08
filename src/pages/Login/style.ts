@@ -8,7 +8,7 @@ display:flex;
 
 export const FormContainer = styled.div`
 flex-direction:'column';
-animation: ${entrance} 1s linear forwards;
+animation: ${entrance} .5s linear forwards;
 display:flex;
 width:350px;
 height: 90vh;
@@ -19,6 +19,12 @@ flex-direction:column;
 background:#ffffff;
 margin: 0 auto;
 position: relative;
+p{
+    color:tomato;
+}
+h1{
+    color:#0C2D48;
+}
 
 @media(max-width: 800px) {
     flex: 1;
