@@ -44,12 +44,10 @@ const CardCnpj: React.FC<cardCnpjProps> = ({
             handleSetSelectedCnpj(cnpj);
           }}
         >
-          {' '}
           Ver Detalhes
         </Button>
       ) : (
         <Button onClick={() => history.push('/login')}>
-          {' '}
           Faça login para ver mais
         </Button>
       )}

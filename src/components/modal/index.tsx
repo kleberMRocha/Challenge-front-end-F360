@@ -38,12 +38,10 @@ const ButtonForm: React.FC<modalPropsOpen> = ({
   useEffect(() => {
     if (!selectedCnpj) return;
 
-    let apiKey = JSON.parse(token);
-
     api
       .get(`/cnpj/get/${selectedCnpj}/detail`, {
         headers: {
-          'x-api-key': apiKey,
+          'x-api-key': token
         },
       })
       .then((response) => setCompanyData(response.data));

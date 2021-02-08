@@ -31,8 +31,7 @@ export const AuthProvider: React.FC = ({ children }) => {
     const user = localStorage.getItem('@CNPJ:user');
 
     if (token && user) {
-      api.defaults.headers.token = `Bearer ${JSON.parse(token)}`;
-      return { token, user: JSON.parse(user) };
+      return { token:JSON.parse(token), user: JSON.parse(user) };
     }
 
     return {} as AuthState;

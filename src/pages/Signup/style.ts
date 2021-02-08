@@ -1,4 +1,3 @@
-import { shade } from 'polished';
 import styled from 'styled-components';
 import BgImg from '../../assets/bg2.jpg';
 import { appearRight, appear } from '../../global/animations';
