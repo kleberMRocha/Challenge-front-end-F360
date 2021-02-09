@@ -1,6 +1,15 @@
 # Teste prático para vaga para front-end na F360
 
-<img src="https://github.com/kleberMRocha/Challenge-front-end-F360/blob/master/screenshots/demo.gif" />
+
+<p align="center">
+    <img src="https://github.com/kleberMRocha/Challenge-front-end-F360/blob/master/src/assets/logo.png" />
+</p>
+
+<p align="center">
+  <img src="https://github.com/kleberMRocha/Challenge-front-end-F360/blob/master/screenshots/demo.gif" />
+</p>
+
+
 
 O objetivo desse teste é criar o front-end para uma API de consumo de CNPJ. Para isso, iremos disponibilizar a API pronta para você. Essa API está documentada utilizando o Swagger. Todos os endpoits necessários para você completar o desafio estarão presente nessa documentação.
 
